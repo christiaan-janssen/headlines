@@ -1,14 +1,21 @@
+<!doctype html>
 <html>
     <head>
         <title>Headlines</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/normalize.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/skeleton.css') }}">
     </head>
     <body>
-        <h1>Headlines</h1>
-        {% for article in articles %}
-        <b><a href="{{article.link}}">{{article.title}}</a></b><br />
-        <i>{{article.published}}</i>
-        <p>{{article.summary}}</p>
-        <hr />
-        {% endfor %}
+        <div class="container">
+            <div class="row">
+                <h1>Headlines</h1>
+                {% for article in articles %}
+                <b><a href="{{article.link}}">{{article.title}}</a></b><br />
+                <i>{{article.published}}</i>
+                <p>{{article.summary}}</p>
+                <hr />
+                {% endfor %}
+            </div>
+        </div>
     </body>
 </html>
