@@ -1,5 +1,7 @@
-import feedparser
+import feedparser, os
 from flask import Flask
+
+port = int(os.environ.get('PORT', 5000))
 
 app = Flask(__name__)
 
@@ -23,4 +25,4 @@ def get_news(publication="bbc"):
     </html>""".format(first_article.get("title"), first_article.get("published"), first_article.get("summary"))
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(port=port,debug=True)
