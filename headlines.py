@@ -24,5 +24,11 @@ def get_news(publication="bbc"):
     </body>
     </html>""".format(first_article.get("title"), first_article.get("published"), first_article.get("summary"))
 
+
+# Bogus route to fix favicon error
+@app.route("/favicon.ico")
+def favicon():
+    return ""
+
 if __name__ == '__main__':
     app.run(debug=True)
