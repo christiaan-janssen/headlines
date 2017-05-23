@@ -23,4 +23,4 @@ def get_news(publication="bbc"):
     </html>""".format(first_article.get("title"), first_article.get("published"), first_article.get("summary"))
 
 if __name__ == '__main__':
-    app.run(port=5000, debug=True)
+    app.run(debug=True)
